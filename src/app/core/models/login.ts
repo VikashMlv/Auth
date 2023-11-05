@@ -1,5 +1,4 @@
-export interface Login {
-    "email":'string',
-    "password": "string",
-    "organizationUrl":'string'
+export interface LoginModel {
+      emailId:string,
+      password: string,
 }

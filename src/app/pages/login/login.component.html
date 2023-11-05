@@ -1,26 +1,29 @@
 <!-- Login Form -->
 
 <div class="mt-4 col-md-10 mx-auto col-lg-5">
-    <!-- onSubmit Click Handler -->
-    <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary"> 
+    <!-- onSubmit onLogin Handler -->
+    <form [formGroup]="userLogin"  class="p-4 p-md-5 border rounded-3 bg-body-tertiary" (ngSubmit)="onLogin()"> 
       <div class="form-floating mb-3">
-        <input type="email" class="form-control" placeholder="name@example.com">
+        <input type="email" name="email" class="form-control" placeholder="name@example.com" formControlName="emailId">
         <label for="floatingInput">Email address</label>
+
       </div>
+
       <div class="form-floating mb-3">
-        <input type="password" name="password" class="form-control"  id="floatingPassword" placeholder="Password">
+        <input type="password" name="password" class="form-control" formControlName="password"  placeholder="Password">
         <label for="floatingPassword">Password</label>
       </div>
-      <div class="form-floating mb-3">
-        <input type="text" name="url" class="form-control" id="floatingPassword" placeholder="Organization url">
-        <label for="floatingPassword">Organizational Url</label>
-      </div>
+
+      
+
       <div class="checkbox mb-3">
         <label>
           <input type="checkbox" value="remember-me"> Remember me
         </label>
       </div>
-      <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+
+      <button [disabled]="userLogin.invalid" class="w-45  btn btn-lg btn-primary" type="submit">Login</button>  |
+      <button class="w-45 btn btn-lg btn-danger" type="reset">Reset</button>
       <hr class="my-4">
       <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
     </form>

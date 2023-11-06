@@ -34,10 +34,24 @@ export class AuthService {
   }
 
 
-  //Get Api All Users 
+  //logging out clearing token from local storage 
+  logOut() {
+    localStorage.clear();
+  }
 
 
+  //Get Api for All Users 
 
+  getAlluserData(): Observable<any> {
+    return this.http.get(this.getAllusers);
+  }
+
+
+  //checking weather user logged in or not 
+
+  isLoggedIn(): boolean {
+    return localStorage.getItem('token') !== null;
+  }
 
 
 }

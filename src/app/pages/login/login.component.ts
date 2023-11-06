@@ -31,13 +31,13 @@ export class LoginComponent {
 
   onLogin() {
     this.httpService.loginClick(this.userLogin.value).subscribe((res: JwtTokenModel) => {
-      localStorage.setItem('getToken', res.data.token)
+      localStorage.setItem('token', res.data.token)
       console.log(res);
       this.httpRouter.navigate(['/dashboard'])
 
     }, (error) => {            //catching error 
       alert(error);
-      console.error('error angular', error);
+      console.error('error occured', error);
 
     })
 

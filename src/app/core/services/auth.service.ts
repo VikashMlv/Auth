@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { LoginModel } from '../models/login';
 import { Observable } from 'rxjs';
 import { JwtTokenModel } from '../models/jwt-token';
+import { AuthGuard } from '../guards/auth.guard';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,7 @@ export class AuthService {
   //get User by Id
   private getUserbyId = "https://freeapi.miniprojectideas.com/api/User/GetUserByUserId?userId=2";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private auth:AuthGuard) { }
 
 
 

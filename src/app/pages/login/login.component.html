@@ -7,6 +7,10 @@
         <input type="email" name="email" class="form-control" placeholder="name@example.com" formControlName="emailId">
         <label for="floatingInput">Email address</label>
 
+        <div *ngIf="emailId.errors?.['required']"  class="text-danger">
+          Email id required.
+        </div>
+        
       </div>
 
       <div class="form-floating mb-3">
@@ -14,13 +18,16 @@
         <label for="floatingPassword">Password</label>
       </div>
 
-      
+        <div *ngIf="password.errors?.['required']" class="text-danger mb-2">
+          password must have at least 5 characters.
+        </div>
 
-      <div class="checkbox mb-3">
+      
+      <!-- <div class="checkbox mb-3">
         <label>
           <input type="checkbox" value="remember-me"> Remember me
         </label>
-      </div>
+      </div> -->
 
       <button [disabled]="userLogin.invalid" class="w-45  btn btn-lg btn-primary" type="submit">Login</button>  |
       <button class="w-45 btn btn-lg btn-danger" type="reset">Reset</button>

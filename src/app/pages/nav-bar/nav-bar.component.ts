@@ -24,11 +24,9 @@ export class NavBarComponent {
 
   }
 
-
   logOut() {
     this.http.logOut();
     this.route.navigate(['/login'])
-
   }
 
 

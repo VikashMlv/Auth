@@ -6,16 +6,16 @@
     </button>
     <div class="login collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="login navbar-nav">
-            <!-- <a *ngIf="!btnStatus" class="nav-item nav-link  text-white" routerLink="/login">Login</a>
-            <a *ngIf="btnStatus" class="nav-item nav-link  text-white" routerLink="/" (click)="logOut()">Logout</a> -->
+            <a *ngIf="!checkUserStatus()" class="nav-item nav-link  text-white" routerLink="/login">Login</a>
+            <a *ngIf="checkUserStatus()" class="nav-item nav-link  text-white" routerLink="/login"  (click)="logOut()">Logout</a>
 
-            <div *ngIf="checkUserStatus(); else loginButton">
+            <!-- <div *ngIf="checkUserStatus(); else loginButton">
                 <button routerLink="/login" (click)="logOut()">Logout</button>
               </div>
               
               <ng-template #loginButton>
                 <button  routerLink="/login">Login</button>
-              </ng-template>
+              </ng-template> -->
         </div>
     </div>
 </nav>

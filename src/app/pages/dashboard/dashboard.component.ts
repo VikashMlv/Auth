@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthGuard } from 'src/app/core/guards/auth.guard';
 import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class DashboardComponent {
 
  alluser:[] = [];
 
-  constructor(private http:AuthService, private route:Router){}
+  constructor(private http:AuthService, private route:Router, private auth:AuthGuard){}
 
 
   ngOnInit(){
@@ -35,6 +36,8 @@ export class DashboardComponent {
   
    if(this.http.isLoggedIn()==true){
     this.userLoginStatus  = true;
+  
+    
     }
 
     else{

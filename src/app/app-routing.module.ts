@@ -8,8 +8,9 @@ import { AuthGuard } from './core/guards/auth.guard';
 const routes: Routes = [
   {path:'',component:HomeComponent,pathMatch:'full'},
   {path:'login',component:LoginComponent},
-  {path:'dashboard',component:DashboardComponent,canActivate:[AuthGuard]}
-];
+  {path:'dashboard',component:DashboardComponent,canActivate:[AuthGuard]},
+  {path:'profile',loadChildren: () => import('./pages/user-lazy-load/user-lazy-load.module').then(m => m.UserLazyLoadModule)}
+   ]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

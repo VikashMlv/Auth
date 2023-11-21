@@ -12,15 +12,14 @@ import { LoginComponent } from './pages/login/login.component';
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './core/interceptor/auth.interceptor';
 import { HttpErrorInterceptor } from './core/interceptor/http-error.interceptor';
-
-
+//lazy loading module 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
     DashboardComponent,
-    NavBarComponent
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,

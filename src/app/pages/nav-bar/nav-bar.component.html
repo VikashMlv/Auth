@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-primary ">
+<!-- <nav class="navbar navbar-expand-lg bg-primary ">
     <a class="navbar-brand text-white" routerLink="/">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,7 +7,7 @@
     <div class="login collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="login navbar-nav">
             <a *ngIf="!checkUserStatus()" class="nav-item nav-link  text-white" routerLink="/login">Login</a>
-            <a *ngIf="checkUserStatus()" class="nav-item nav-link  text-white" routerLink="/login"  (click)="logOut()">Logout</a>
+            <a *ngIf="checkUserStatus()" class="nav-item nav-link  text-white" routerLink="/login"  (click)="logOut()">Logout</a> -->
 
             <!-- <div *ngIf="checkUserStatus(); else loginButton">
                 <button routerLink="/login" (click)="logOut()">Logout</button>
@@ -16,6 +16,16 @@
               <ng-template #loginButton>
                 <button  routerLink="/login">Login</button>
               </ng-template> -->
-        </div>
+        <!-- </div>
     </div>
-</nav>
+</nav> -->
+
+
+<ul>
+    <div class="home">
+     <li><a class="active"  routerLink="/">Home</a></li>
+    </div>
+    <li> <a *ngIf="!checkUserStatus()" class="nav-item nav-link  text-white" routerLink="/login">Login</a></li>
+    <li> <a *ngIf="checkUserStatus()" class="nav-item nav-link  text-white" routerLink="/login"  (click)="logOut()">Logout</a></li>
+
+   </ul>
